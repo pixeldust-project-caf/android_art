@@ -132,7 +132,10 @@ JitCompiler::JitCompiler() {
       }
     }
   }
+
   if (instruction_set_features_ == nullptr) {
+    // '--instruction-set-features/--instruction-set-variant' were not used.
+    // Use build-time defined features.
     instruction_set_features_ = InstructionSetFeatures::FromCppDefines();
   }
   compiler_driver_.reset(new CompilerDriver(
