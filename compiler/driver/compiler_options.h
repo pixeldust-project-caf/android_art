@@ -33,6 +33,10 @@ namespace verifier {
 class VerifierDepsTest;
 }  // namespace verifier
 
+namespace linker {
+class Arm64RelativePatcherTest;
+}  // namespace linker
+
 class DexFile;
 
 class CompilerOptions FINAL {
@@ -358,6 +362,7 @@ class CompilerOptions FINAL {
   friend class DexToDexDecompilerTest;
   friend class CommonCompilerTest;
   friend class verifier::VerifierDepsTest;
+  friend class linker::Arm64RelativePatcherTest;
 
   template <class Base>
   friend bool ReadCompilerOptions(Base& map, CompilerOptions* options, std::string* error_msg);
